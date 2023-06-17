@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Typography, Button, CardMedia, Card, CardContent } fro
 import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
 import picture from './image/KARELA-09140.jpg';
-import { API_URL } from './config';
+import { API_URL } from "./config";
 
 function Menu({ categories }) {
   const params = useParams();
