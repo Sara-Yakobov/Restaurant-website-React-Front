@@ -3,6 +3,7 @@ import { AppBar, Toolbar, Typography, Button, CardMedia, Card, CardContent } fro
 import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
 import picture from './image/KARELA-09140.jpg';
+import { API_URL } from './config';
 
 function Menu({ categories }) {
   const params = useParams();
@@ -17,7 +18,7 @@ function Menu({ categories }) {
   }, [params.id]);
 
   function fetchDishes() {
-    axios.get(`https://apiproject3.braveocean-96b61207.swedencentral.azurecontainerapps.io/dishes`)
+    axios.get(`${API_URL}/dishes`)
       .then(response => {
         setDishes(response.data);
       })
@@ -27,7 +28,7 @@ function Menu({ categories }) {
   }
 
   function filterByCategory(category_id) {
-    axios.get(`https://apiproject3.braveocean-96b61207.swedencentral.azurecontainerapps.io/dishes?category_id=${category_id}`)
+    axios.get(`${API_URL}/dishes?category_id=${category_id}`)
       .then(response => {
         setDishes(response.data);
       })

@@ -5,13 +5,14 @@ import axios from "axios";
 import Menu from "./Menu";
 import picture from "./image/KARELA-09140.jpg";
 import './App.css';
+import { API_URL } from "./config";
 
 
 function App() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axios.get('https://apiproject3.braveocean-96b61207.swedencentral.azurecontainerapps.io/categories').then(response => {
+    axios.get(`${API_URL}/categories`).then(response => {
       setCategories(response.data);
     });
   }, []);

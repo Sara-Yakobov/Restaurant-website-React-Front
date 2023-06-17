@@ -1,0 +1,1 @@
+export const API_URL = 'https://apiproject3.braveocean-96b61207.swedencentral.azurecontainerapps.io'
